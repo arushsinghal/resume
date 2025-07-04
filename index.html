@@ -3,9 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <title>Arush Singhal - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #222;
+      --btn-color: #007acc;
+      --btn-hover: #005fa3;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #eaeaea;
+      --btn-color: #3498db;
+      --btn-hover: #2980b9;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    a.button {
+      padding: 0.7rem 1.4rem;
+      background-color: var(--btn-color);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      margin-bottom: 2rem;
+    }
+
+    a.button:hover {
+      background-color: var(--btn-hover);
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 1000px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    button.toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--btn-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    button.toggle:hover {
+      background: var(--btn-hover);
+    }
+  </style>
 </head>
 <body>
+  <button class="toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   <h1>Arush Singhal</h1>
-  <p><a href="resume.pdf" target="_blank">📄 View or Download My Resume (PDF)</a></p>
+  <a href="resume.pdf" target="_blank" class="button">📄 View / Download Resume</a>
+  <iframe src="resume.pdf"></iframe>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 </body>
 </html>
